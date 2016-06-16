@@ -8,24 +8,36 @@ import minesweeper.core.Field;
  * Main application class.
  */
 public class Minesweeper {
-    /** User interface. */
-    private UserInterface userInterface;
- 
-    /**
-     * Constructor.
-     */
-    private Minesweeper() {
-        userInterface = new ConsoleUI();
-        
-        Field field = new Field(9, 9, 10);
-        userInterface.newGameStarted(field);
-    }
+	/** User interface. */
+	private UserInterface userInterface;
+	private long startMillis = System.currentTimeMillis();
 
-    /**
-     * Main method.
-     * @param args arguments
-     */
-    public static void main(String[] args) {
-        new Minesweeper();
-    }
+	/**
+	 * Constructor.
+	 */
+	
+	public int getPlayingSeconds(){
+	
+		int timePlayed= (int) (System.currentTimeMillis() - startMillis);
+		
+		return timePlayed;
+		
+	}
+	
+	private Minesweeper() {
+		userInterface = new ConsoleUI();
+
+		Field field = new Field(9, 9, 10);
+		userInterface.newGameStarted(field);
+	}
+
+	/**
+	 * Main method.
+	 * 
+	 * @param args
+	 *            arguments
+	 */
+	public static void main(String[] args) {
+		new Minesweeper();
+	}
 }
