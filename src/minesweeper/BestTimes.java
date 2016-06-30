@@ -1,6 +1,9 @@
 package minesweeper;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Formatter;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,6 +13,7 @@ import java.util.List;
 public class BestTimes implements Iterable<BestTimes.PlayerTime>{
     /** List of best player times. */
     private List<PlayerTime> playerTimes = new ArrayList<PlayerTime>();
+    private BestTimes bestTimes=new BestTimes();
 
     /**
      * Returns an iterator over a set of  best times.
@@ -26,7 +30,10 @@ public class BestTimes implements Iterable<BestTimes.PlayerTime>{
      */
     public void addPlayerTime(String name, int time) {
 
-    	    
+    	   PlayerTime player = new PlayerTime(name, time);
+
+    	   playerTimes.add(player);
+    	   Collections.sort(playerTimes);
     
     }
 
@@ -35,7 +42,11 @@ public class BestTimes implements Iterable<BestTimes.PlayerTime>{
      * @return a string representation of the object
      */
     public String toString() {
-        throw new UnsupportedOperationException("Method toString not yet implemented");
+
+        Formatter f= new Formatter();
+
+        return f.toString();
+    
     }
 
     /**

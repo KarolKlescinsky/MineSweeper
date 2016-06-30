@@ -11,6 +11,7 @@ public class Minesweeper {
 	/** User interface. */
 	private UserInterface userInterface;
 	private long startMillis = System.currentTimeMillis();
+    private BestTimes bestTimes=new BestTimes();
 
 	/**
 	 * Constructor.
