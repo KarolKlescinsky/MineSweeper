@@ -13,7 +13,6 @@ import java.util.List;
 public class BestTimes implements Iterable<BestTimes.PlayerTime>{
     /** List of best player times. */
     private List<PlayerTime> playerTimes = new ArrayList<PlayerTime>();
-    private BestTimes bestTimes=new BestTimes();
 
     /**
      * Returns an iterator over a set of  best times.

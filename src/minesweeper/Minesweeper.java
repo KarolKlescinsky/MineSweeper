@@ -12,6 +12,7 @@ public class Minesweeper {
 	private UserInterface userInterface;
 	private long startMillis = System.currentTimeMillis();
     private BestTimes bestTimes=new BestTimes();
+    private static Minesweeper instance;
 
 	/**
 	 * Constructor.
@@ -31,6 +32,11 @@ public class Minesweeper {
 		Field field = new Field(9, 9, 10);
 		userInterface.newGameStarted(field);
 	}
+
+	public BestTimes getBestTimes() {
+		return bestTimes;
+	}
+
 
 	/**
 	 * Main method.
